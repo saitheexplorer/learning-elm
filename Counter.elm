@@ -1,8 +1,7 @@
-module Counter where
-
 import Html exposing (..)
 import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
+import StartApp.Simple exposing (start)
 
 type alias Model = Int
 
@@ -33,3 +32,10 @@ countStyle =
     , ("width", "50px")
     , ("text-align", "center")
     ]
+
+main =
+  start
+    { model = 0
+    , update = update
+    , view = view
+    }
